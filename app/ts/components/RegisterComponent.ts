@@ -90,12 +90,6 @@ export class RegisterComponent {
   renderUser(res: any): void {
     this.user = res;
     console.log(this.user);
-  }  
-  
-  loginAfterRegister(email, password) {
-    this._authService.login(email, password).subscribe( (res) => {
-      console.log('Login after Registration successed');
-    });
   }
   
 }
