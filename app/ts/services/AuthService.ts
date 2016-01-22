@@ -44,21 +44,6 @@ export class AuthService {
 		} )
 	}
 	
-	getUser(): any {
-		let _token = localStorage.getItem('id_token');
-		let decode = this.jwtHelper.decodeToken(_token).__data;
-		console.log('get User decode', decode);
-		let userId = decode.userId;
-		return this.authHttp.get(`${AuthService.BASE_URL}/Users/`+userId, { headers: this.header} )
-			.do(
-			data => console.log(json(data)),
-			err => {
-				console.log('error');
-		},
-			() => console.log('Request Complete')
-			);
-	}
-	
 	logout(): any {
 		
 		
